@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class ItemAdapter(val dataRick: List<ResultsItem>): RecyclerView.Adapter<ItemAdapter.MyViewHolder>() {
+class ItemAdapter(val dataItem: List<ResultsItem>): RecyclerView.Adapter<ItemAdapter.MyViewHolder>() {
     class MyViewHolder (view: View): RecyclerView.ViewHolder(view){
         val imgItem = view.findViewById<ImageView>(R.id.item_image)
         val nameItem = view.findViewById<TextView>(R.id.item_name)
@@ -23,24 +23,24 @@ class ItemAdapter(val dataRick: List<ResultsItem>): RecyclerView.Adapter<ItemAda
     }
 
     override fun getItemCount(): Int {
-        if(dataRick != null){
-            return dataRick.size
+        if(dataItem != null){
+            return dataItem.size
         }
         return 0
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.nameItem.text = dataRick?.get(position)?.name
-        holder.statusItem.text = dataRick?.get(position)?.status
-        holder.speciesItem.text = dataRick?.get(position)?.species
+        holder.nameItem.text = dataItem?.get(position)?.name
+        holder.statusItem.text = dataItem?.get(position)?.status
+        holder.speciesItem.text = dataItem?.get(position)?.species
 
         Glide.with(holder.imgItem)
-            .load(dataRick?.get(position)?.image)
+            .load(dataItem?.get(position)?.image)
             .error(R.drawable.ic_launcher_background)
             .into(holder.imgItem)
 
         holder.itemView.setOnClickListener{
-            val name = dataRick?.get(position)?.name
+            val name = dataItem?.get(position)?.name
             Toast.makeText(holder.itemView.context, "${name}", Toast.LENGTH_SHORT).show()
         }
 
