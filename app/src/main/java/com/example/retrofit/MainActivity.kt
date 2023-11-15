@@ -14,15 +14,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rick = findViewById<RecyclerView>(R.id.rv_character)
+        val item = findViewById<RecyclerView>(R.id.rv_character)
 
-        ApiConfig.getService().getRick().enqueue(object : Callback<com.example.retrofit.Response>{
+        ApiConfig.getService().getItem().enqueue(object : Callback<com.example.retrofit.Response>{
             override fun onResponse(call: Call<com.example.retrofit.Response>, response: Response<com.example.retrofit.Response>){
                 if(response.isSuccessful){
-                    val responseRick = response.body()
-                    val dataRick = responseRick?.results
-                    val ItemAdapter = ItemAdapter(dataRick as List<ResultsItem>)
-                    rick.apply {
+                    val responseItem = response.body()
+                    val dataItem = responseItem?.results
+                    val ItemAdapter = ItemAdapter(dataItem as List<ResultsItem>)
+                    item.apply {
                         layoutManager = LinearLayoutManager(this@MainActivity)
                         setHasFixedSize(true)
                         ItemAdapter.notifyDataSetChanged()

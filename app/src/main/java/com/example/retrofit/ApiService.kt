@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface ApiService {
     @GET ("character")
-    fun getRick(): Call<Response>
+    fun getItem(): Call<Response>
 }
