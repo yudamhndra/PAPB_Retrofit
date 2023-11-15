@@ -13,7 +13,7 @@
         app:cardCornerRadius="10dp">
 
         <ImageView
-            android:id="@+id/item_image_rick"
+            android:id="@+id/item_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/ic_launcher_background" />
@@ -21,7 +21,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/item_name_rick"
+        android:id="@+id/item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -35,24 +35,24 @@
         android:id="@+id/spesies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/item_name_rick"
+        android:layout_below="@id/item_name"
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@id/cv_img"
         android:text="Species :"
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/item_species_rick"
+        android:id="@+id/item_species"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/item_name_rick"
+        android:layout_below="@id/item_name"
         android:layout_marginLeft="5dp"
         android:layout_toRightOf="@id/spesies"
         android:text="Human"
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/item_status_rick"
+        android:id="@+id/item_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/spesies"

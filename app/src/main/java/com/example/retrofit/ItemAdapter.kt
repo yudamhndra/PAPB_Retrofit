@@ -11,10 +11,10 @@ import com.bumptech.glide.Glide
 
 class ItemAdapter(val dataRick: List<ResultsItem>): RecyclerView.Adapter<ItemAdapter.MyViewHolder>() {
     class MyViewHolder (view: View): RecyclerView.ViewHolder(view){
-        val imgRick = view.findViewById<ImageView>(R.id.item_image_rick)
-        val nameRick = view.findViewById<TextView>(R.id.item_name_rick)
-        val statusRick = view.findViewById<TextView>(R.id.item_status_rick)
-        val speciesRick = view.findViewById<TextView>(R.id.item_species_rick)
+        val imgItem = view.findViewById<ImageView>(R.id.item_image)
+        val nameItem = view.findViewById<TextView>(R.id.item_name)
+        val statusItem = view.findViewById<TextView>(R.id.item_status)
+        val speciesItem = view.findViewById<TextView>(R.id.item_species)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -30,14 +30,14 @@ class ItemAdapter(val dataRick: List<ResultsItem>): RecyclerView.Adapter<ItemAda
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.nameRick.text = dataRick?.get(position)?.name
-        holder.statusRick.text = dataRick?.get(position)?.status
-        holder.speciesRick.text = dataRick?.get(position)?.species
+        holder.nameItem.text = dataRick?.get(position)?.name
+        holder.statusItem.text = dataRick?.get(position)?.status
+        holder.speciesItem.text = dataRick?.get(position)?.species
 
-        Glide.with(holder.imgRick)
+        Glide.with(holder.imgItem)
             .load(dataRick?.get(position)?.image)
             .error(R.drawable.ic_launcher_background)
-            .into(holder.imgRick)
+            .into(holder.imgItem)
 
         holder.itemView.setOnClickListener{
             val name = dataRick?.get(position)?.name
